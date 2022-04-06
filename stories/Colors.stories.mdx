@@ -1,0 +1,132 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+import { themes, ThemeProvider, convert, ensure } from '@storybook/theming';
+import { defaultTheme, getAllThemes } from '../src/styles/themes';
+
+<Meta title="Getting Started/Colors" />
+
+<div>
+  {Object.entries(getAllThemes()).map(([k, v]) => {
+    return (
+      <div key={k}>
+        <h2>{`Theme: ${v.name}`}</h2>
+        <ColorPalette>
+          <ColorItem
+            title="Text"
+            subtitle="Textos"
+            colors={{
+              text: v.text,
+              text2: v.text2,
+              textLight: v.textLight,
+              textNeutralLighter: v.textNeutralLighter,
+              textHighlight: v.textHighlight,
+            }}
+          />
+          <ColorItem
+            title="Primary"
+            subtitle="Botones Primary"
+            colors={{
+              primary: v.primary,
+              primaryHover: v.primaryHover,
+              primaryClick: v.primaryClick,
+            }}
+          />
+          <ColorItem
+            title="Secondary"
+            subtitle="Botones Filtros"
+            colors={{
+              secondary: v.secondary,
+              secondaryHover: v.secondaryHover,
+              secondaryClick: v.secondaryClick,
+            }}
+          />
+          <ColorItem
+            title="Default"
+            subtitle="Botones Default"
+            colors={{
+              default: v.default,
+              defaultHover: v.defaultHover,
+              defaultClick: v.defaultClick,
+            }}
+          />
+          <ColorItem
+            title="Header"
+            subtitle="Color Cabecera"
+            colors={{
+              header: v.header,
+              headerHover: v.headerHover,
+              headerClick: v.headerClick,
+            }}
+          />
+          <ColorItem
+            title="Disabled"
+            subtitle="Color Disabled"
+            colors={{
+              disabled: v.disabled,
+              disabledInput: v.disabledInput,
+            }}
+          />
+          <ColorItem
+            title="Tab"
+            subtitle="Color Tab"
+            colors={{
+              tab: v.tab,
+              tabHover: v.tabHover,
+              tabClick: v.tabClick,
+              tabActive: v.tabActive,
+              tabDisabled: v.tabDisabled,
+            }}
+          />
+          <ColorItem
+            title="Panel"
+            subtitle="Color Background Panel"
+            colors={{
+              panel: v.panel,
+            }}
+          />
+          <ColorItem
+            title="Border"
+            subtitle="Color Border"
+            colors={{
+              border: v.border,
+              borderButtonDisabled: v.borderButtonDisabled,
+              borderFocusVisible: v.borderFocusVisible,
+            }}
+          />
+          <ColorItem
+            title="Background"
+            subtitle="Color Background"
+            colors={{
+              bg: v.bg,
+              bgMenu: v.bgMenu,
+            }}
+          />
+          <ColorItem
+            title="Hover"
+            subtitle="Color Hover"
+            colors={{
+              hover: v.hover,
+            }}
+          />
+          <ColorItem
+            title="Scroll Bar"
+            subtitle="Color Scroll Bar"
+            colors={{
+              scrollbarThumbBg: v.scrollbarThumbBg,
+              scrollbarThumbHover: v.scrollbarThumbHover,
+              scrollbarTrack: v.scrollbarTrack,
+            }}
+          />
+          <ColorItem
+            title="Others"
+            subtitle="Otros colores"
+            colors={{
+              white: v.white,
+              green: v.green,
+              danger: v.danger,
+            }}
+          />
+        </ColorPalette>
+      </div>
+    );
+  })}
+</div>
