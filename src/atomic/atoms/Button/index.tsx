@@ -13,7 +13,7 @@ export interface ButtonProps
 }
 
 /** Botón según el manual */
-const Button: React.FC<ButtonProps> = ({
+export const Button: React.FC<ButtonProps> = ({
   styled = 'Default',
   children,
   disabled,
@@ -25,5 +25,3 @@ const Button: React.FC<ButtonProps> = ({
     </StyledButton>
   );
 };
-
-export default Button;

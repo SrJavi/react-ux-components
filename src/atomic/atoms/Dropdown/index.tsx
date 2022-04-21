@@ -8,7 +8,7 @@ import React, {
   SetStateAction,
 } from 'react';
 import { FaTimes } from 'react-icons/fa';
-import CheckboxIcon from '../CheckboxIcon';
+import { CheckboxIcon } from '../CheckboxIcon';
 import {
   Container,
   Select,
@@ -37,7 +37,7 @@ export interface DropdownProps {
   disabled?: boolean;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({
+export const Dropdown: React.FC<DropdownProps> = ({
   options,
   selectedItems,
   setSelectedItems,
@@ -83,8 +83,12 @@ const Dropdown: React.FC<DropdownProps> = ({
       if (selectedItems.length === 0) {
         headerValue.current.innerText = `Seleccionar...`;
       } else {
-        headerValue.current.innerText = selectedItems
-          .map((item) => item.label)
+        const leftJoin = selectedItems.map((item) => ({
+          ...item,
+          ...options?.find((option) => option.value === item.value),
+        }));
+        headerValue.current.innerText = leftJoin
+          .map((item) => item.label || item.value)
           .join(', ');
         if (headerValue.current.clientWidth < headerValue.current.scrollWidth) {
           headerValue.current.innerText = `Seleccionados: ${selectedItems.length} `;
@@ -221,5 +225,3 @@ const Dropdown: React.FC<DropdownProps> = ({
     </Container>
   );
 };
-
-export default Dropdown;

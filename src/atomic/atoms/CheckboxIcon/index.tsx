@@ -8,12 +8,12 @@ interface CheckboxIconProps {
   isChecked?: boolean;
 }
 
-const CheckboxIcon: React.FC<CheckboxIconProps> = ({ isChecked = false }) => {
+export const CheckboxIcon: React.FC<CheckboxIconProps> = ({
+  isChecked = false,
+}) => {
   return (
     <Container isChecked={isChecked}>
       {isChecked && <FaCheck size={10} />}
     </Container>
   );
 };
-
-export default CheckboxIcon;

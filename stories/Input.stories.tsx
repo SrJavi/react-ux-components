@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Meta, Story } from '@storybook/react';
-import Input, { InputProps } from '../src/atomic/atoms/Input';
+import { Input, InputProps } from '../src/atomic/atoms/Input';
 
 const meta: Meta = {
   title: 'Atoms/Input',

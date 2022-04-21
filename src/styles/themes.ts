@@ -1,12 +1,64 @@
-export const defaultTheme = {
+export interface ThemeType {
+  name: string;
+  fontSize: string;
+  fontSizeButtons: string;
+  fontSizeTitle1: string;
+  borderRadius: string;
+  inputsHeight: string;
+  headerHeight: string;
+  scrollbarWidth: string;
+  scrollbarThumbRadius: string;
+  text: string;
+  text2: string;
+  textLight: string;
+  textNeutralLighter: string;
+  textHighlight: string;
+  primary: string;
+  primaryHover: string;
+  primaryClick: string;
+  secondary: string;
+  secondaryHover: string;
+  secondaryClick: string;
+  default: string;
+  defaultHover: string;
+  defaultClick: string;
+  header: string;
+  headerHover: string;
+  headerClick: string;
+  disabled: string;
+  disabledInput: string;
+  tab: string;
+  tabHover: string;
+  tabClick: string;
+  tabActive: string;
+  tabDisabled: string;
+  panel: string;
+  border: string;
+  borderButtonDisabled: string;
+  borderFocusVisible: string;
+  bg: string;
+  menuBg: string;
+  menuHover: string;
+  hover: string;
+  white: string;
+  green: string;
+  danger: string;
+  scrollbarThumbBg: string;
+  scrollbarThumbHover: string;
+  scrollbarTrack: string;
+}
+
+export const defaultTheme: ThemeType = {
   name: 'DEFAULT',
   fontSize: '13px',
   fontSizeButtons: '15px',
+  fontSizeTitle1: '20px',
   borderRadius: '2px',
   inputsHeight: '36px',
+  headerHeight: '48px',
   scrollbarWidth: '8px',
   scrollbarThumbRadius: '3px',
-
+  //${(props) => props.theme.textNeutralLighter}
   text: '#666666',
   text2: '#999',
   textLight: '#ffffff',
@@ -45,7 +97,8 @@ export const defaultTheme = {
   borderFocusVisible: '#666666',
 
   bg: '#f2f2f2',
-  bgMenu: '#333',
+  menuBg: '#333',
+  menuHover: '#474749',
 
   hover: '#6666',
 
@@ -58,12 +111,14 @@ export const defaultTheme = {
   scrollbarTrack: '#f1f1f1',
 };
 
-const darkTheme = {
+const darkTheme: ThemeType = {
   name: 'DARK',
   fontSize: '13px',
   fontSizeButtons: '15px',
+  fontSizeTitle1: '20px',
   borderRadius: '2px',
   inputsHeight: '36px',
+  headerHeight: '48px',
   scrollbarWidth: '8px',
   scrollbarThumbRadius: '3px',
 
@@ -105,7 +160,8 @@ const darkTheme = {
   borderFocusVisible: '#666666',
 
   bg: '#f2f2f2',
-  bgMenu: '#333',
+  menuBg: '#333',
+  menuHover: '#474749',
 
   hover: '#6666',
 

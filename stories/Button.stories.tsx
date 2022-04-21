@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { FaPlus } from 'react-icons/fa';
-import Button, { ButtonProps } from '../src/atomic/atoms/Button';
+import { Button, ButtonProps } from '../src/atomic/atoms/Button';
 import Center from './Center';
 
 const meta: Meta = {

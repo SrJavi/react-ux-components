@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { Meta, ComponentStory } from '@storybook/react';
-import Dropdown, {
-  DropdownProps,
-  IOptions,
-} from '../src/atomic/atoms/Dropdown';
+import { Dropdown, IOptions } from '../src/atomic/atoms/Dropdown';
 
 const meta: Meta = {
   title: 'Atoms/Dropdown',
@@ -48,7 +45,7 @@ const Template: ComponentStory<typeof DropdownWrapper> = ({
   <DropdownWrapper
     options={[...Array(numberOfOption).keys()].map((n) => ({
       label: `Option ${n + 1}`,
-      value: n + 1,
+      value: `${n + 1}`,
     }))}
     selectedItems={[]}
     {...args}
@@ -67,44 +64,5 @@ export const DefaultValue = Template.bind({});
 
 DefaultValue.args = {
   isMultiple: true,
-  selectedItems: [{ value: 4 }, { value: 2 }],
+  selectedItems: [{ value: '4' }, { value: '2' }, { value: '10' }],
 };
-
-// const DropdownWrapperDefaultValue = ({selectedItems, ...props}) => {
-//   const [selected, setSelected] = useState<IOptions[]>(selectedItems);
-
-//   console.log('selected', selected);
-
-//   return (
-//     <div style={{ height: '350px' }}>
-//       <Dropdown
-//         selectedItems={selected}
-//         setSelectedItems={setSelected}
-//         options={[]}
-//         {...props}
-//       />
-//     </div>
-//   );
-// };
-// DropdownWrapperDefaultValue.displayName = 'DefaultValue';
-
-// const DefaultValueTemplate: ComponentStory<typeof DropdownWrapper> = ({
-//   numberOfOption,
-//   selectedItems,
-//   ...args
-// }) => (
-//   <DropdownWrapper
-//     options={[...Array(numberOfOption).keys()].map((n) => ({
-//       label: `Option ${n + 1}`,
-//       value: n + 1,
-//     }))}
-//     selectedItems={[{ value: 2 }]}
-//     {...args}
-//   />
-// );
-
-// export const DefaultValue = DefaultValueTemplate.bind({});
-
-// DefaultValue.args = {
-//   isMultiple: true,
-// };
